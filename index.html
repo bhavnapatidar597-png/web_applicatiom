@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediQueue - Clinic Booking App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>MediQueue</h1>
+        <p>Simple Clinic Appointment & Token System</p>
+    </header>
+
+    <div class="container">
+        <!-- Problem & Solution (Task 2 Requirement) -->
+        <div class="info-section">
+            <div class="box">
+                <h3>1. Problem Identification</h3>
+                <p>Clinics use paper registers, causing long waiting lines and confusion for patients.</p>
+            </div>
+            <div class="box">
+                <h3>2. Proposed Solution</h3>
+                <p>A simple web app to book appointments online, generate token numbers, and track live wait times.</p>
+            </div>
+        </div>
+
+        <!-- Main App Section -->
+        <div class="main-section">
+            <!-- Booking Form -->
+            <div class="box">
+                <h3>Book Appointment</h3>
+                <form id="bookingForm">
+                    <label>Patient Name</label>
+                    <input type="text" id="name" placeholder="Enter name" required>
+
+                    <label>Department</label>
+                    <select id="dept">
+                        <option value="General Physician">General Physician</option>
+                        <option value="Dental">Dental</option>
+                        <option value="Eye Care">Eye Care</option>
+                    </select>
+
+                    <button type="submit">Get Token</button>
+                </form>
+            </div>
+
+            <!-- Live Queue List -->
+            <div class="box">
+                <h3>Live Queue (Waiting: <span id="waitCount">0</span>)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
